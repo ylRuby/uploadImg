@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上传图片</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片拖拽上传示范</h1>
+        <div class="pic-wrapper">
+            <section class="select-box">
+                <label>
+                    <div class="img-select">
+                        <img src="./img/image.png"/>
+                        <div>选择图片</div>
+                    </div>
+                    <input id="imgPic" type="file" multiple/>
+                </label>
+            </section>
+            <section class="drag-box" id="dragBox">请将图片拖到此区域</section>
+        </div>
+        <section>
+            <div class="option-box">
+                <p class="fl">已选中<span id="picLen">0</span>张图片，共<span id="picSize">0</span>MB</p>
+                <div class="fr">
+                    <label class="select-btn">
+                        <input type="file" multiple/>
+                        <div>继续选择</div>
+                    </label>
+                    <button type="button" class="green" id="uploadBtn">开始上传</button>
+                </div>
+            </div>
+            <ul class="img-box" id="imgBox"></ul>
+        </section>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

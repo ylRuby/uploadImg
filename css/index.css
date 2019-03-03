@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    border:none;
+    list-style: none;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.green{
+    background-color:#6bc30d;
+}
+
+body{
+    background-color:#f1f1f1;
+    font-family: '微软雅黑';
+}
+.container{
+    width:1000px;
+    margin:100px auto 0;
+    border-radius: 6px;
+    background: #fff;
+    padding-bottom: 20px;
+}
+h1{
+    font:400 28px/68px '微软雅黑';
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;
+    color:rgb(153, 153, 153);
+}
+.pic-wrapper{
+    display: flex;
+    height:200px;
+}
+.select-box label{
+    position: relative;
+    display:block;
+    width:260px;
+    height: 160px;
+    margin:20px;
+    background-color:#f1f1f1;
+}
+.select-box .img-select{
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+.img-select{
+    padding-top:10px;
+} 
+.img-select img{
+    display:block;
+    width:100px;
+    height:100px;
+    margin:0 auto;
+}
+.img-select div{
+    height:40px;
+    line-height: 40px;
+    margin-top:10px;
+    font-size:18px;
+    color:#fff;
+    background: #6bc30d;
+}
+.drag-box{
+    width:680px;
+    height:160px;
+    line-height: 160px;
+    margin-top:20px;
+    text-align: center;
+    color:#9f9f9f;
+    background-color: #f1f1f1;
+}
+.option-box{
+    margin:10px 20px 20px;
+    height:40px;
+    line-height: 40px;
+}
+
+.option-box button,.select-btn div{
+    width:130px;
+    height:40px;
+    font-size:18px;
+    color:#fff;
+    border-radius: 3px;
+}
+.select-btn div{
+    text-align: center;
+    background-color:#9f9f9f;
+}
+.option-box .select-btn{
+    display: inline-flex;
+    position: relative;
+    width:130px;
+    height:40px;
+    overflow: hidden;
+}
+.select-box input, .option-box .select-btn input{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+}
+.img-box{
+    display:flex;
+    flex-flow: row wrap;
+    min-height:200px;
+    margin:0 20px;
+    border:1px solid #f1f1f1;
+} 
+.img-box li{
+    position:relative;
+    width:180px;
+    margin-bottom: 5px;
+    margin-right:10px;
+    overflow: hidden;
+}
+.img-box li p{
+    position: absolute;
+    width:100%;
+    height:24px;
+    line-height: 24px;
+    top:-24px;
+    padding-right:24px;
+    transition: top 0.5s linear;
+    font-size:12px;
+    color:#fff;
+    background-color:rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+.img-box li:hover p{
+    top:0;
+}
+.img-box p .del{
+    position: absolute;
+    top: 0;
+    right: 24px;
+    width:24px;
+    height:24px;
+    background:url(../img/del.png) no-repeat center center;
+}
+.img-box p .del:hover{
+    background-color: #f00;
+    cursor: pointer;
+}
+

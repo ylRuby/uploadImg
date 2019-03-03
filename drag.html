@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>拖拽</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-wrapper{
+            width:500px;
+            height:300px;
+            text-align: center;
+            color:aquamarine;
+            background-color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="img-wrapper" id="imgWrapper"></div>
+    <script>
+        const imgBox = document.querySelector('#imgWrapper')
+        /* imgBox.ondragenter = function(){
+            imgBox.innerText = '请释放鼠标'
+        }
+        imgBox.ondragleave = function(){
+            imgBox.innerText = '请把图片拖动到这里'
+        } */
+        imgBox.ondragover = function(e){
+            e.preventDefault()
+            e.stopPropagation()
+            return false
+        }
+        // 图片放置时触发
+        imgBox.ondrop = function(e){
+            const data = e.dataTransfer.files[0]
+            if(/image/.test(data.type)){
+                showImage(data)
+            }
+            e.preventDefault()
+            e.stopPropagation()
+            return false
+        }
+        function showImage(data){
+            // 把文件转换成 blob 对象
+            const blob = new Blob([data])
+            let url = window.URL.createObjectURL(blob)
+            // 拖拽图片预览
+            const reader = new FileReader()
+            reader.readAsDataURL(data)
+            reader.onload = function(){
+                let image = new Image()
+                image.src = url
+                image.width = 100
+                image.onload = function(){
+                    imgBox.appendChild(this)
+                }
+            } 
+        }
+    </script>
+</body>
+</html>
